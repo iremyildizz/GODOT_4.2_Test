@@ -1,0 +1,59 @@
+[gd_scene load_steps=3 format=3 uid="uid://vhycpwyxwpve"]
+
+[ext_resource type="Texture2D" uid="uid://babxgt01yhsmn" path="res://graphics/gradient.jpg" id="1_cs0py"]
+[ext_resource type="Script" path="res://Main_Menu.cs" id="1_v7afk"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_v7afk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(964.915, 545.655)
+scale = Vector2(0.323695, 0.277327)
+texture = ExtResource("1_cs0py")
+
+[node name="GameTitle" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 507.0
+offset_top = 72.0
+offset_right = 1411.0
+offset_bottom = 272.0
+theme_override_font_sizes/normal_font_size = 141
+text = "Fake Baloons"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 53.915
+offset_top = -307.495
+offset_right = 362.915
+offset_bottom = -47.4944
+grow_vertical = 0
+
+[node name="Start" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 55
+text = "Start"
+alignment = 0
+
+[node name="Settings" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 55
+text = "Settings"
+alignment = 0
+
+[node name="Quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 55
+text = "Quit"
+alignment = 0
+
+[connection signal="mouse_entered" from="VBoxContainer/Start" to="." method="_on_start_mouse_entered"]
+[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
